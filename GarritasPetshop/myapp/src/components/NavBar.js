@@ -1,8 +1,9 @@
 import {Navbar, Nav, Container, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
-
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
     return (
+        <div className='navbarContainer'>
         <Navbar bg="light" expand="lg" className='navegacion'>
         <Container>
             <Navbar.Brand href="#home" className='nav-link'>GARRITAS PETSHOP</Navbar.Brand>
@@ -38,7 +39,10 @@ const NavBar = () => {
                 </Form>
             </Navbar.Collapse>
         </Container>
-        </Navbar>
+        </Navbar> 
+        <CartWidget/>
+        </div>
+                
     );
 };
 

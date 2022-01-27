@@ -1,18 +1,15 @@
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -23,11 +20,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #61dafb;
 }
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -40,21 +35,22 @@
 
 
 
+
 @font-face {
   font-family: Qsand;
-  src: url(../assets/fonts/Quicksand-VariableFont_wght.ttf)
+  src: url(./assets/fonts/Quicksand-VariableFont_wght.ttf)
 }
 @font-face{
   font-family: QsandBold;
-  src: url(../assets/fonts/static/Quicksand-Bold.ttf)
+  src: url(./assets/fonts/static/Quicksand-Bold.ttf)
 }
 @font-face{
   font-family: QsandSemiBold;
-  src: url(../assets/fonts/static/Quicksand-SemiBold.ttf)
+  src: url(./assets/fonts/static/Quicksand-SemiBold.ttf)
 }
 @font-face{
   font-family: QsandLight;
-  src: url(../assets/fonts/static/Quicksand-Light.ttf)
+  src: url(./assets/fonts/static/Quicksand-Light.ttf)
 }
 html{
   font-size: 67.5%;
@@ -64,20 +60,40 @@ body{
   background-color: whitesmoke;
   animation: 0.5s ease-in opacityIn;
 }
+
+
+
+.navbarContainer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 40px;
+}
+
 .contenedor{
     max-width: 85%;
     margin: 0 auto;
     position: relative;
 }
 
+
+
+.cartWidget{
+  width: 50px;
+  height: 50px;
+  padding-top: 15px;
+  position: relative;
+  top: 10%;
+}
 .navegacion{
   font-size: 1.5vw;
   padding: 10px 0 4px 0;
   background-color:whitesmoke;
   color:whitesmoke;
   text-decoration: none;
-  width: 100%;
-  margin: auto;
+  width: 90%;
+  /* margin: auto; */
   position: relative;
   font-family: QsandSemiBold;
   border-radius: 15px 15px 0 0;
@@ -154,4 +170,9 @@ body{
   border-radius: 15px;
 }
 
-
+.catalogoContainer{
+  padding-top: 50px;
+  text-align: center;
+  height: 500px;
+  align-content: center;
+}
