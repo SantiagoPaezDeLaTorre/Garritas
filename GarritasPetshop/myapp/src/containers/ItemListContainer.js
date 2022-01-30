@@ -1,19 +1,15 @@
-
-
-const lorem = "lorem ipsum dolor amet"
-
-const ItemListContainer = ()  =>{
+const ItemListContainer = (props)  =>{
     return(
         <div className="catalogoContainer"> 
             <ul className="lista">
                 <li>
-                    <h2>{lorem}</h2>
+                    <h2>{props.estadoUno}</h2>
                 </li>
                 <li>
-                    <h2>{lorem}</h2>
+                    <h2>{props.estadoDos}</h2>
                 </li>
                 <li>
-                    <h2>{lorem}</h2>
+                    <h2>{props.estadoUno}</h2>
                 </li>
             </ul>
         </div>

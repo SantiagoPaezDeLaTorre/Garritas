@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './containers/ItemListContainer';
 import './App.css';
 
 function App() {
   return (
     <div className="contenedor">
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer estadoUno="loreeeeeem" estadoDos="ipsuuuummm" />
     </div>
   );
 }
