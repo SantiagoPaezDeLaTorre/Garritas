@@ -6,7 +6,7 @@ const ItemListContainer = (props)  =>{
                     <h2>{props.estadoUno}</h2>
                 </li>
                 <li>
-                    <h2>{props.estadoDos}</h2>
+                    <h2>{props.estadoUno}</h2>
                 </li>
                 <li>
                     <h2>{props.estadoUno}</h2>

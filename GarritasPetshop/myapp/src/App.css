@@ -173,6 +173,30 @@ body{
 .catalogoContainer{
   padding-top: 50px;
   text-align: center;
-  height: 500px;
+  height: 150px;
   align-content: center;
+}
+.lista{
+  display: flex;
+  list-style: none;
+}
+.lista li{
+  width: 30%;
+}
+.contador{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  font-size: 2rem;
+  
+}
+
+.contadorUp{
+  display: inherit;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 3%;
+}
+.comprarBtn{
+  width: 100%;
 }
