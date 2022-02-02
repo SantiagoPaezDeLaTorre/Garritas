@@ -29,9 +29,9 @@ const ItemCounter = ({stock, initial}) => {
     return(
         <div className="contador">
             <div className="contadorUp">
-                <button onClick={handlerCounterDown}>Decrementar</button>
+                <button onClick={handlerCounterDown}> - </button>
                 <p>{counter}</p>
-                <button onClick={handlerCounterUp}>Incrementar</button>
+                <button onClick={handlerCounterUp}> + </button>
             </div>
             <button className="comprarBtn" onClick={addToCart}>comprar</button>
         </div>
