@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 
-const ItemCounter = () => {
+const ItemCounter = ({stock, initial}) => {
 
-    const [counter, setCounter] = useState (1);
-    const stock = 5;
+    const [counter, setCounter] = useState (initial);
     const handlerCounterUp = () =>{
         if (counter<stock) {
             setCounter(counter+1)      
         }
         if (counter === stock) {
-            alert("No quedan más en stock")
+            alert("El stock es de "+(JSON.stringify(stock)+"."))
         }
     }
     const handlerCounterDown = () =>{
@@ -18,7 +17,13 @@ const ItemCounter = () => {
         }
     }
     const addToCart = () =>{
-        alert("se agregó al carrito")
+        if (counter===1){
+            alert("Se agregó al carrito " +(JSON.stringify(counter)+ " producto."))
+        }
+        else {
+            alert("Se agregaron al carrito " +(JSON.stringify(counter)+ " productos."))
+        }
+        
     }
 
     return(

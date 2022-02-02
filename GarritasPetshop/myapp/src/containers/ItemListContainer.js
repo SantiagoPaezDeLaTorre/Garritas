@@ -11,7 +11,7 @@ const ItemListContainer = ({estadoUno, estadoDos})  =>{
                     <h2>{estadoDos}</h2>
                 </li>
                 <li>
-                    <ItemCounter />
+                    <ItemCounter stock={5} initial={1} />
                 </li>
             </ul>
         </div>
