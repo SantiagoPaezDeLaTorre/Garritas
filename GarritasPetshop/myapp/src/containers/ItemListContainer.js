@@ -1,15 +1,17 @@
-const ItemListContainer = (props)  =>{
+import ItemCounter from '../components/ItemCounter';
+
+const ItemListContainer = ({estadoUno, estadoDos})  =>{
     return(
         <div className="catalogoContainer"> 
             <ul className="lista">
                 <li>
-                    <h2>{props.estadoUno}</h2>
+                    <h2>{estadoUno}</h2>
                 </li>
                 <li>
-                    <h2>{props.estadoUno}</h2>
+                    <h2>{estadoDos}</h2>
                 </li>
                 <li>
-                    <h2>{props.estadoUno}</h2>
+                    <ItemCounter />
                 </li>
             </ul>
         </div>
