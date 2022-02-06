@@ -3,24 +3,27 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import ItemCounter from './ItemCounter';
 
 const Item = ({data}) => {
     return (
     <Card sx={{ maxWidth: 345 }}>
-        <CardMedia component="img" alt="green iguana" height="140" image="/static/images/cards/contemplative-reptile.jpg" />
+        <CardMedia component="img" alt="green iguana" height="140" image={data.img} />
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
                 {data.nombre}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="h5" color="text.secondary">
                 {data.precio}
             </Typography>
         </CardContent>
         <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
+            <ItemCounter
+                stock={data.stock}
+                initial={1}
+                onAdd={(counter) => console.log(counter)}
+            />
         </CardActions>
     </Card>
     );

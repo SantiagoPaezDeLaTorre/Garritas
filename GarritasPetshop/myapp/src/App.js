@@ -9,7 +9,6 @@ const App = () => {
     <div className="contenedor">
       <NavBar />
       <ItemListContainer estadoUno="lorem" estadoDos="ipsum"/>
-      <ItemList />
 
     </div>
   );

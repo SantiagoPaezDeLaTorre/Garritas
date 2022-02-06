@@ -23,7 +23,6 @@ const ItemList = () => {
                         <Item data={item} />
                     </div>)                
             })}
-            <Item />
         </div>
     ) 
 };
