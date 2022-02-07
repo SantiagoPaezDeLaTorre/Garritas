@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./ItemList.css";
 import Item from "../Item";
 
@@ -10,10 +10,10 @@ const ItemList = ({ items, setShowDetail }) => {
     return <p>Loading....</p>;
   }
   return (
-    <div>
+    <div className="catalogoContainer">
       {items.map((item) => {
         return (
-          <div onClick={() => setShowDetail(item.id)} key={item.id}>
+          <div className="itemCard" onClick={() => setShowDetail(item.id)} key={item.id}>
             <Item data={item} />
           </div>
         );

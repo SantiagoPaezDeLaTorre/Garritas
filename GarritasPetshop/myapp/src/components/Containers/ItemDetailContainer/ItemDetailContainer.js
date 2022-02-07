@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ItemDetail from "../../ItemDetail";
+import ItemDetail from "../../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = ({ items, showDetail, setShowDetail, onAdd }) => {
   const itemClicked = items.filter((item) => item.id === showDetail);
@@ -7,7 +7,7 @@ const ItemDetailContainer = ({ items, showDetail, setShowDetail, onAdd }) => {
   console.log(showDetail);
 
   return (
-    <div className="itemDetail">
+    <div className="itemDetailContainer">
       <button onClick={() => setShowDetail("")}>BACK</button>
       <ItemDetail onAdd={onAdd} itemClicked={itemClicked} />
     </div>

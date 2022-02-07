@@ -1,23 +1,15 @@
-import ItemCounter from "../../components/ItemCounter";
 import ItemList from "../../components/ItemList/ItemList";
 import "./ItemListContainer.css";
 
-const ItemListContainer = ({ items, estadoUno, estadoDos, setShowDetail }) => {
+const ItemListContainer = ({ items, setShowDetail }) => {
   return (
-    <div className="catalogoContainer">
-      {/* <ul className="lista">
-        <li>
-          <h2>{estadoUno}</h2>
-        </li>
-        <li>
-          <h2>{estadoDos}</h2>
-        </li>
-        <li>
-          <ItemCounter stock={5} initial={1} onAdd={onAddToCart} />
-        </li>
-      </ul> */}
-      <ItemList items={items} setShowDetail={setShowDetail} />
+    <div className="itemListContainer">
+      <h1>Alimentos</h1>
+      <div>
+        <ItemList items={items} setShowDetail={setShowDetail} />
+      </div>
     </div>
+    
   );
 };
 

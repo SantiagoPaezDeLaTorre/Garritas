@@ -21,13 +21,16 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
   return (
     <div className="contador">
       <div className="contadorUp">
-        <button onClick={handlerCounterDown}> - </button>
-        <p>{counter}</p>
-        <button onClick={handlerCounterUp}> + </button>
-      </div>
-      <button className="comprarBtn" onClick={() => onAdd(counter)}>
+
+        <h4>Cantidad: {counter}</h4>
+        <button className="contadorBtn" onClick={handlerCounterDown}> - </button>
+        
+        <button className="contadorBtn" onClick={handlerCounterUp}> + </button>
+        <button className="contadorBtn comprarBtn" onClick={() => onAdd(counter)}>
         comprar
       </button>
+      </div>
+      
     </div>
   );
 };
