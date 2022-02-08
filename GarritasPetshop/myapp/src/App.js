@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "../src/Containers/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "../src/Containers/ItemDetailContainer/ItemDetailContainer";
+import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import "./App.css";
 
 const App = () => {
