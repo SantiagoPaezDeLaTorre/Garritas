@@ -1,16 +1,20 @@
-import React, { useState } from "react";
-import ItemCounter from "../ItemCounter";
+import React from "react";
+import ItemCounter from "../ItemCounter/ItemCounter";
 import "../ItemDetail/ItemDetail.css"
-const ItemDetail = ({ itemClicked, onAdd }) => {
+
+
+const ItemDetail = ({ itemDetails, onAdd }) => {
+
+
   return (
     <div className="itemDetail">
       <div className="itemDetailLeft">
-        <img src={itemClicked[0].img}></img>        
+        <img src={itemDetails.img}></img>        
       </div>
       <div className="itemDetailRight">
-        <h1>{itemClicked[0].nombre}</h1>
-        <h2>$ {itemClicked[0].precio}</h2>
-        <ItemCounter stock={itemClicked[0].stock} initial={1} onAdd={onAdd} />
+        <h1>{itemDetails.nombre}</h1>
+        <h2>$ {itemDetails.precio}</h2>
+        <ItemCounter stock={itemDetails.stock} initial={1} onAdd={onAdd} />
       </div>
     </div>
   );
