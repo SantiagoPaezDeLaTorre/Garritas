@@ -13,15 +13,13 @@ const ItemDetailContainer = ({ showDetail, setShowDetail, onAdd }) => {
       .then((json) => {itemClicked = json.find(item=>item.id === showDetail)})
       .then(() => setItemDetails(itemClicked));
 
-      setTimeout(()=>{
-        setIsLoading(false);
-      }, 2000);
+    setTimeout(()=>{
+      setIsLoading(false);
+    }, 2000);
 
   }, []);  
   console.log(itemDetails);
-
   
-
   return (
     <div className="itemDetailContainer">
       <button onClick={() => setShowDetail("")}>BACK</button>

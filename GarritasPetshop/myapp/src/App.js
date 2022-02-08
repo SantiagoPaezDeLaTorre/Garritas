@@ -6,7 +6,6 @@ import "./App.css";
 
 const App = () => {
   const [showDetail, setShowDetail] = useState("");
-  // const [items, setItems] = useState([]);
   const onAddToCart = (counter) => {
     if (counter === 1) {
       alert("Se agregó al carrito " + JSON.stringify(counter) + " producto.");
@@ -16,11 +15,6 @@ const App = () => {
       );
     }
   };
-  // useEffect(() => {
-  //   fetch("/dogFood.json")
-  //     .then((response) => response.json())
-  //     .then((json) => setItems(json));
-  // }, []);
 
   return (
     <div className="contenedor">
