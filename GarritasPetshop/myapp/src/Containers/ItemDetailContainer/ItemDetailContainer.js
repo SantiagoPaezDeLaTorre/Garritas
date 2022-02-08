@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import ItemDetail from "../../ItemDetail/ItemDetail";
-import loader from "../../../assets/images/spinLoading.gif"
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import loader from "../../assets/images/spinLoading.gif"
 
 const ItemDetailContainer = ({ showDetail, setShowDetail, onAdd }) => {
   
@@ -17,9 +17,8 @@ const ItemDetailContainer = ({ showDetail, setShowDetail, onAdd }) => {
       setIsLoading(false);
     }, 2000);
 
-  }, []);  
-  console.log(itemDetails);
-  
+  }, []);
+    
   return (
     <div className="itemDetailContainer">
       <button onClick={() => setShowDetail("")}>BACK</button>
