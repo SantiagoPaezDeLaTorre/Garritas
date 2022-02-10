@@ -10,11 +10,18 @@ import {
 import CartWidget from "../CartWidget/CartWidget";
 import { Link, useNavigate } from 'react-router-dom';
 
-const NavBar = (setCategoryId) => {
+const NavBar = ({setCategoryId}) => {
   
   const navigate = useNavigate();
   function handlerCategory(category) {
+    if (category === "perros"){
+      setCategoryId(1)
+    }
+    else {
+      setCategoryId(2)
+    }
     navigate.push(`/${category}`);
+    
   }
   return (
     <div className="navbarContainer">

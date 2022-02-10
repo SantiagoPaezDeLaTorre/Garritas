@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import loader from "../../assets/images/spinLoading.gif"
 
-const ItemDetailContainer = ({ showDetail, setShowDetail, onAdd }) => {
+const ItemDetailContainer = ({ showDetail, setShowDetail, onAddToCart }) => {
   
   let itemClicked = {};
   const [itemDetails, setItemDetails] = useState({});
@@ -22,7 +22,7 @@ const ItemDetailContainer = ({ showDetail, setShowDetail, onAdd }) => {
   return (
     <div className="itemDetailContainer">
       <button onClick={() => setShowDetail("")}>BACK</button>
-      {isLoading ? <img src={loader}></img> : <ItemDetail onAdd={onAdd} itemDetails={itemDetails} />} 
+      {isLoading ? <img src={loader}></img> : <ItemDetail onAddToCart={onAddToCart} itemDetails={itemDetails} />} 
     </div>
   );
 };

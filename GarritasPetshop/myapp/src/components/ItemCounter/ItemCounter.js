@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 
-const ItemCounter = ({ stock, initial, onAdd }) => {
+const ItemCounter = ({ stock, initial, onAddToCart }) => {
   const [counter, setCounter] = useState(initial);
   const handlerCounterUp = () => {
     if (counter < stock) {
-      console.log(initial);
-      console.log(counter);
       setCounter(counter + 1);
     }
     if (counter === stock) {
@@ -26,7 +24,7 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
         <button className="contadorBtn" onClick={handlerCounterDown}> - </button>
         
         <button className="contadorBtn" onClick={handlerCounterUp}> + </button>
-        <button className="contadorBtn comprarBtn" onClick={() => onAdd(counter)}>
+        <button className="contadorBtn comprarBtn" onClick={() => onAddToCart(counter)}>
         comprar
       </button>
       </div>

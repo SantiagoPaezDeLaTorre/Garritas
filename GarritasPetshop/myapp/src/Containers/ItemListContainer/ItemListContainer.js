@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ItemList from "../../components/ItemList/ItemList";
 import "./ItemListContainer.css";
 
-const ItemListContainer = ({setShowDetail, categoryId, setCategoryId}) => {
+const ItemListContainer = ({setShowDetail, categoryId}) => {
   
   const [items, setItems] = useState([]);
   useEffect(() => {
@@ -14,7 +14,7 @@ const ItemListContainer = ({setShowDetail, categoryId, setCategoryId}) => {
 
   }, []);
 
-  const categoryClicked = items.filter(item => item.tipoId === categoryId);
+  const categoryClicked = items.filter(item => +item.tipoId === +categoryId);
 
   
   console.log("categoryId");
@@ -27,7 +27,7 @@ const ItemListContainer = ({setShowDetail, categoryId, setCategoryId}) => {
     <div className="itemListContainer">
       <h1>Alimentos</h1>
       <div>
-        <ItemList items={items} setShowDetail={setShowDetail} />
+        <ItemList categoryClicked={categoryClicked} setShowDetail={setShowDetail} />
       </div>
     </div>
     

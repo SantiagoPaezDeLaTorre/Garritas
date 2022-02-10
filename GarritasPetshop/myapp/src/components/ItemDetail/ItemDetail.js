@@ -3,7 +3,7 @@ import ItemCounter from "../ItemCounter/ItemCounter";
 import "../ItemDetail/ItemDetail.css"
 
 
-const ItemDetail = ({ itemDetails, onAdd }) => {
+const ItemDetail = ({ itemDetails, onAddToCart }) => {
 
 
   return (
@@ -14,7 +14,7 @@ const ItemDetail = ({ itemDetails, onAdd }) => {
       <div className="itemDetailRight">
         <h1>{itemDetails.nombre}</h1>
         <h2>$ {itemDetails.precio}</h2>
-        <ItemCounter stock={itemDetails.stock} initial={1} onAdd={onAdd} />
+        <ItemCounter stock={itemDetails.stock} initial={1} onAddToCart={onAddToCart} />
       </div>
     </div>
   );

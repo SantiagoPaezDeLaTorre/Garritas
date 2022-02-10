@@ -2,8 +2,10 @@ import React from 'react';
 import ItemDetailContainer from '../../containers/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from '../../containers/ItemListContainer/ItemListContainer';
 
-const Perros = ({showDetail, setShowDetail, onAddToCart, categoryId, setCategoryId}) => {
+const Perros = ({showDetail, setShowDetail, onAddToCart}) => {
+    console.log("showDetail");
     console.log(showDetail);
+    
     return(
     <div className="contenedor">
         {showDetail !== "" ? 
@@ -13,9 +15,9 @@ const Perros = ({showDetail, setShowDetail, onAddToCart, categoryId, setCategory
             setShowDetail={setShowDetail}
             />)
             :
-            (<ItemListContainer
+            (<ItemListContainer 
             setShowDetail={setShowDetail}
-            categoryId={categoryId} setCategoryId={setCategoryId}
+            categoryId="1"
             />)
         }
     </div>

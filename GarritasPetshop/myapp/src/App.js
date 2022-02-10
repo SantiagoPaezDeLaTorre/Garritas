@@ -10,7 +10,7 @@ import "./App.css";
 
 const App = () => {
   const [showDetail, setShowDetail] = useState("");
-  const [categoryId, setCategoryId] = useState(0);
+
   const onAddToCart = (counter) => {
     if (counter === 1) {
       alert("Se agregó al carrito " + JSON.stringify(counter) + " producto.");
@@ -25,12 +25,12 @@ const App = () => {
     <Router>
       <div className="contenedor">
 
-        <NavBar setCategoryId={setCategoryId} />
+        <NavBar/>
 
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/perros" element={<Perros showDetail={showDetail} categoryId={categoryId} setCategoryId={setCategoryId} onAdd={onAddToCart}/>} />
-          <Route path="/gatos" element={<Gatos categoryId={categoryId} setCategoryId={setCategoryId}/>} />
+          <Route path="/perros" element={<Perros showDetail={showDetail} onAdd={onAddToCart} setShowDetail={setShowDetail}/>} />
+          <Route path="/gatos" element={<Gatos  showDetail={showDetail} onAdd={onAddToCart} setShowDetail={setShowDetail}/>} />
         </Routes>
         {/* {showDetail !== "" ? (
           <ItemDetailContainer
