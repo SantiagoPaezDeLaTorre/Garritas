@@ -3,8 +3,6 @@ import ItemDetailContainer from '../../containers/ItemDetailContainer/ItemDetail
 import ItemListContainer from '../../containers/ItemListContainer/ItemListContainer';
 
 const Perros = ({showDetail, setShowDetail, onAddToCart}) => {
-    console.log("showDetail");
-    console.log(showDetail);
     
     return(
     <div className="contenedor">

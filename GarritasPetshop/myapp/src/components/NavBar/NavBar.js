@@ -17,7 +17,7 @@ const NavBar = ({setCategoryId}) => {
     if (category === "perros"){
       setCategoryId(1)
     }
-    else {
+    else if (category === "gatos") {
       setCategoryId(2)
     }
     navigate.push(`/${category}`);
@@ -48,52 +48,7 @@ const NavBar = ({setCategoryId}) => {
               <Nav.Link as={Link} to="/servicios" href="#servicios" className="nav-link">
                 SERVICIOS
               </Nav.Link>
-              {/* <NavDropdown
-                className="nav-link"
-                title="PERROS"
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item href="#action/3.1">
-                  Estética e higiene
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Juguetes y snacks
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Alimentos
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown
-                className="nav-link"
-                title="GATOS"
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item href="#action/3.1">
-                  Estética e higiene
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Juguetes y snacks
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Alimentos
-                </NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown
-                className="nav-link"
-                title="SERVICIOS"
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item href="#action/3.1">
-                  Guardería
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Peluqueria canina
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Atención veterinaria
-                </NavDropdown.Item>
-              </NavDropdown> */}
-              <Nav.Link as={Link} to="/Contacto" href="#link" className="nav-link">
+              <Nav.Link as={Link} to="/contacto" href="#link" className="nav-link">
                 CONTACTO
               </Nav.Link>
             </Nav>
