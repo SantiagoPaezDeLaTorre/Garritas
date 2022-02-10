@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
-import loader from "../../assets/images/spinLoading.gif"
+import loader from "../../assets/images/spinLoading-unscreen.gif"
 
 const ItemDetailContainer = ({ showDetail, setShowDetail, onAddToCart }) => {
   
