@@ -8,13 +8,19 @@ import {
   Button,
 } from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link, useNavigate } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = (setCategoryId) => {
+  
+  const navigate = useNavigate();
+  function handlerCategory(category) {
+    navigate.push(`/${category}`);
+  }
   return (
     <div className="navbarContainer">
       <Navbar bg="light" expand="lg" className="navegacion">
         <Container>
-          <Navbar.Brand href="#home" className="nav-link">
+          <Navbar.Brand as={Link} to="/" href="#home" className="nav-link">
             GARRITAS PETSHOP
           </Navbar.Brand>
           <Navbar.Toggle
@@ -23,10 +29,19 @@ const NavBar = () => {
           />
           <Navbar.Collapse id="basic-navbar-nav" className="navbar-collapse">
             <Nav className="me-auto">
-              <Nav.Link href="#home" className="nav-link">
+              <Nav.Link as={Link} to="/" className="nav-link" >
                 INICIO
               </Nav.Link>
-              <NavDropdown
+              <Nav.Link as={Link} to="/perros" className="nav-link" onClick={() => handlerCategory("perros")}>
+                PERROS
+              </Nav.Link>
+              <Nav.Link as={Link} to="/gatos" className="nav-link" onClick={() => handlerCategory("gatos")}>
+                GATOS
+              </Nav.Link>
+              <Nav.Link as={Link} to="/servicios" href="#servicios" className="nav-link">
+                SERVICIOS
+              </Nav.Link>
+              {/* <NavDropdown
                 className="nav-link"
                 title="PERROS"
                 id="basic-nav-dropdown"
@@ -70,8 +85,8 @@ const NavBar = () => {
                 <NavDropdown.Item href="#action/3.3">
                   Atención veterinaria
                 </NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link href="#link" className="nav-link">
+              </NavDropdown> */}
+              <Nav.Link as={Link} to="/Contacto" href="#link" className="nav-link">
                 CONTACTO
               </Nav.Link>
             </Nav>
