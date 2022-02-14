@@ -11,8 +11,10 @@ const ItemListContainer = ({setShowDetail, categoryId}) => {
       .then((json) => setItems(json))
 
   }, []);
-
-  const categoryClicked = items.filter(item => +item.tipoId === +categoryId);
+  
+  const pathname = window.location.pathname;
+  const actualCategory = pathname.substring(1);
+  const categoryClicked = items.filter(item => item.tipoId === actualCategory);
 
   return (
     <div className="itemListContainer">
