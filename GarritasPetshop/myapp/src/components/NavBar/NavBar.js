@@ -39,10 +39,10 @@ const NavBar = ({setCategoryId}) => {
               <Nav.Link as={Link} to="/" className="nav-link" >
                 INICIO
               </Nav.Link>
-              <Nav.Link as={Link} to="/perros" className="nav-link" onClick={() => handlerCategory("perros")}>
+              <Nav.Link as={Link} to="/categoria/perros" className="nav-link" onClick={() => handlerCategory("perros")}>
                 PERROS
               </Nav.Link>
-              <Nav.Link as={Link} to="/gatos" className="nav-link" onClick={() => handlerCategory("gatos")}>
+              <Nav.Link as={Link} to="/categoria/gatos" className="nav-link" onClick={() => handlerCategory("gatos")}>
                 GATOS
               </Nav.Link>
               <Nav.Link as={Link} to="/servicios" href="#servicios" className="nav-link">

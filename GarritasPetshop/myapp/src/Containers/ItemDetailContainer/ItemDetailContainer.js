@@ -5,7 +5,6 @@ import {useParams} from 'react-router-dom';
 
 const ItemDetailContainer = ({ showDetail, setShowDetail, onAddToCart }) => {
   
-
   let id = useParams();
   let productId = id.id;
 
@@ -27,7 +26,7 @@ const ItemDetailContainer = ({ showDetail, setShowDetail, onAddToCart }) => {
 
   console.log("itemClicked");
   console.log(itemClicked);
-  
+
   return (
     <div className="itemDetailContainer">
       <button onClick={() => setShowDetail("")}>BACK</button>

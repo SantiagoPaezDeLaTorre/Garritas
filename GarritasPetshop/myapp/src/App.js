@@ -34,8 +34,9 @@ const App = () => {
           <Route path="/" element={<Home/>} />
           {/* <Route path="/perros" element={<Perros showDetail={showDetail} onAdd={onAddToCart} setShowDetail={setShowDetail}/>} />
           <Route path="/gatos" element={<Gatos  showDetail={showDetail} onAdd={onAddToCart} setShowDetail={setShowDetail}/>} /> */}
-          <Route path="/perros" element={<ItemListContainer setShowDetail={setShowDetail}/>} />
-          <Route path="/gatos" element={<ItemListContainer setShowDetail={setShowDetail}/>} />
+          <Route path="/categoria/:micategoria" element={<ItemListContainer setShowDetail={setShowDetail}/>} />  
+          {/* /:category */}
+          {/* <Route path="/gatos" element={<ItemListContainer setShowDetail={setShowDetail}/>} /> */}
           <Route path="/detail/:id" element={<ItemDetailContainer />} />
           <Route path="/servicios" element={<Servicios/>} />
           <Route path="/contacto" element={<Contacto/>} />
