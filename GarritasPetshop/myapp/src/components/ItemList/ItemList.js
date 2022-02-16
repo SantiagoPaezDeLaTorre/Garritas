@@ -3,12 +3,12 @@ import "./ItemList.css";
 import Item from "../Item/Item";
 import { Link } from 'react-router-dom';
 
-const ItemList = ({ items, micategoria, categoryClicked, setShowDetail, categoria }) => {
+const ItemList = ({ items, micategoria}) => {
   return (
     <div className="catalogoContainer">
       {items.map((item) => {
         return(
-          <div className="itemCard" onClick={() =>setShowDetail(item.id)} key={item.id}>
+          <div className="itemCard" key={item.id}>
             <Link to={`/categoria/${micategoria}/${item.id}`}>
               <Item data={item} />
             </Link>

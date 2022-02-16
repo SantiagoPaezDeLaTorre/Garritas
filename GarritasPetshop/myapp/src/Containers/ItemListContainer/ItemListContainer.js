@@ -3,7 +3,7 @@ import ItemList from "../../components/ItemList/ItemList";
 import "./ItemListContainer.css";
 import {useParams} from 'react-router-dom';
 
-const ItemListContainer = ({setShowDetail, categoryId}) => {
+const ItemListContainer = () => {
   
   const {micategoria} = useParams();
   console.log(micategoria);
@@ -30,7 +30,7 @@ const ItemListContainer = ({setShowDetail, categoryId}) => {
     <div className="itemListContainer">
       <h1>Alimentos</h1>
       <div>
-        <ItemList micategoria={micategoria} setShowDetail={setShowDetail} items={items}/>
+        <ItemList micategoria={micategoria} items={items}/>
       </div>
     </div>
     

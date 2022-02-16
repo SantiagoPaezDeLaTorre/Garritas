@@ -3,7 +3,7 @@ import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import loader from "../../assets/images/spinLoading-unscreen.gif"
 import {useParams} from 'react-router-dom';
 
-const ItemDetailContainer = ({ showDetail, setShowDetail}) => {
+const ItemDetailContainer = () => {
   
   const onAddToCart = (counter) => {
     if (counter === 1) {
@@ -48,7 +48,6 @@ const ItemDetailContainer = ({ showDetail, setShowDetail}) => {
 
   return (
     <div className="itemDetailContainer">
-      <button onClick={() => setShowDetail("")}>BACK</button>
       {isLoading ? <img src={loader}></img> : <ItemDetail onAddToCart={onAddToCart} itemDetails={itemDetails}  counterRender={counterRender} setCounterRender={setCounterRender} />} 
     </div>
   );
