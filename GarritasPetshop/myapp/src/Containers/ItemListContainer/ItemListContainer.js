@@ -6,29 +6,32 @@ import {useParams} from 'react-router-dom';
 const ItemListContainer = ({setShowDetail, categoryId}) => {
   
   const [categoria, setCategoria] = useState("");
-  let categoriaObjetc = useParams();
-  setCategoria(categoriaObjetc.micategoria);
-  console.log("categoria");
-  console.log(categoria);
-  
-  const [items, setItems] = useState([]);
-  
-  useEffect(() => {
-    fetch("../products.json")
-      .then((response) => response.json())
-      .then((json) => setItems(json))
-  }, []);
+  const {micategoria} = useParams();
+  console.log(micategoria);
 
-  // const pathname = window.location.pathname;
-  // const actualCategory = pathname.substring(1);
-  const categoryClicked = items.filter(item => item.tipoId === categoria);
-  console.log("array filtrado");
-  console.log(categoryClicked);
+  const [items, setItems] = useState([]);
+  let categoryClicked = [];
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('../products.json');
+        const results = await response.json();
+        categoryClicked = results.filter(item => item.tipoId === micategoria);
+        setItems(categoryClicked);
+      }
+      catch(e) {
+        console.error(e);
+      }
+    }
+    fetchData();
+  }, [micategoria]);
+
   return (
     <div className="itemListContainer">
       <h1>Alimentos</h1>
       <div>
-        <ItemList categoryClicked={categoryClicked} setShowDetail={setShowDetail} categoria={categoria}/>
+        <ItemList micategoria={micategoria} setShowDetail={setShowDetail} items={items}/>
       </div>
     </div>
     

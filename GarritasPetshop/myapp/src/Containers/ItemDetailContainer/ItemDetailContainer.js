@@ -5,27 +5,35 @@ import {useParams} from 'react-router-dom';
 
 const ItemDetailContainer = ({ showDetail, setShowDetail, onAddToCart }) => {
   
-  let id = useParams();
-  let productId = id.id;
+  let {id} = useParams();
+  console.log(id);
 
   let itemClicked = {};
   const [itemDetails, setItemDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+
   
   useEffect(() => {
-    fetch("../products.json")
-      .then((response) => response.json())
-      .then((json) => {itemClicked = json.find(item=>item.id === productId)})
-      .then(() => setItemDetails(itemClicked));
-
+    async function fetchData() {
+      try {
+        const response = await fetch('/products.json');
+        const results = await response.json();
+        console.log("results");
+        console.log(results);
+        itemClicked = results.find(item => item.id == id);
+        setItemDetails(itemClicked);
+      }
+      catch(e) {
+        console.error(e);
+      }
+    }
+    fetchData();
+        
     setTimeout(()=>{
       setIsLoading(false);
     }, 2000);
 
   }, []);
-
-  console.log("itemClicked");
-  console.log(itemClicked);
 
   return (
     <div className="itemDetailContainer">

@@ -37,7 +37,7 @@ const App = () => {
           <Route path="/categoria/:micategoria" element={<ItemListContainer setShowDetail={setShowDetail}/>} />  
           {/* /:category */}
           {/* <Route path="/gatos" element={<ItemListContainer setShowDetail={setShowDetail}/>} /> */}
-          <Route path="/detail/:id" element={<ItemDetailContainer />} />
+          <Route path="/categoria/:micategoria/:id" element={<ItemDetailContainer />} />
           <Route path="/servicios" element={<Servicios/>} />
           <Route path="/contacto" element={<Contacto/>} />
         </Routes>
