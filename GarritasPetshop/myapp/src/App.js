@@ -8,42 +8,25 @@ import Contacto from "./views/Contacto/Contacto";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import CartContainer from "./containers/CartContainer/CartContainer";
 import "./App.css";
 
 const App = () => {
   const [showDetail, setShowDetail] = useState("");
 
-  const onAddToCart = (counter) => {
-    if (counter === 1) {
-      alert("Se agregó al carrito " + JSON.stringify(counter) + " producto.");
-    } else {
-      alert(
-        "Se agregaron al carrito " + JSON.stringify(counter) + " productos."
-      );
-    }
-  };
-
   return (
     <Router>
-
       <div className="contenedor">
-
         <NavBar/>
-
         <Routes>
           <Route path="/" element={<Home/>} />
-          {/* <Route path="/perros" element={<Perros showDetail={showDetail} onAdd={onAddToCart} setShowDetail={setShowDetail}/>} />
-          <Route path="/gatos" element={<Gatos  showDetail={showDetail} onAdd={onAddToCart} setShowDetail={setShowDetail}/>} /> */}
-          <Route path="/categoria/:micategoria" element={<ItemListContainer setShowDetail={setShowDetail}/>} />  
-          {/* /:category */}
-          {/* <Route path="/gatos" element={<ItemListContainer setShowDetail={setShowDetail}/>} /> */}
+          <Route path="/categoria/:micategoria" element={<ItemListContainer setShowDetail={setShowDetail}/>} />
           <Route path="/categoria/:micategoria/:id" element={<ItemDetailContainer />} />
           <Route path="/servicios" element={<Servicios/>} />
           <Route path="/contacto" element={<Contacto/>} />
+          <Route path="/cart" element={<CartContainer/>} />
         </Routes>
-
       </div>
-
     </Router>
 
   );

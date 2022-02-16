@@ -3,15 +3,26 @@ import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import loader from "../../assets/images/spinLoading-unscreen.gif"
 import {useParams} from 'react-router-dom';
 
-const ItemDetailContainer = ({ showDetail, setShowDetail, onAddToCart }) => {
+const ItemDetailContainer = ({ showDetail, setShowDetail}) => {
   
+  const onAddToCart = (counter) => {
+    if (counter === 1) {
+      alert("Se agregó al carrito " + JSON.stringify(counter) + " producto.");
+    } else {
+      alert(
+        "Se agregaron al carrito " + JSON.stringify(counter) + " productos."
+      );
+    }
+    setCounterRender(false);
+  };
+
   let {id} = useParams();
   console.log(id);
 
   let itemClicked = {};
   const [itemDetails, setItemDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
+  const [counterRender, setCounterRender] = useState(true);
   
   useEffect(() => {
     async function fetchData() {
@@ -38,7 +49,7 @@ const ItemDetailContainer = ({ showDetail, setShowDetail, onAddToCart }) => {
   return (
     <div className="itemDetailContainer">
       <button onClick={() => setShowDetail("")}>BACK</button>
-      {isLoading ? <img src={loader}></img> : <ItemDetail onAddToCart={onAddToCart} itemDetails={itemDetails} />} 
+      {isLoading ? <img src={loader}></img> : <ItemDetail onAddToCart={onAddToCart} itemDetails={itemDetails}  counterRender={counterRender} setCounterRender={setCounterRender} />} 
     </div>
   );
 };

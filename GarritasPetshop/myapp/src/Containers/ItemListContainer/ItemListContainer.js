@@ -5,7 +5,6 @@ import {useParams} from 'react-router-dom';
 
 const ItemListContainer = ({setShowDetail, categoryId}) => {
   
-  const [categoria, setCategoria] = useState("");
   const {micategoria} = useParams();
   console.log(micategoria);
 
