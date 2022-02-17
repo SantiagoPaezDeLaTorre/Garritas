@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom';
+
 
 const ItemCounter = ({itemDetails, stock, onAddToCart }) => {
   const [counter, setCounter] = useState(1);
@@ -25,9 +25,9 @@ const ItemCounter = ({itemDetails, stock, onAddToCart }) => {
         
         <button className="contadorBtn" onClick={handlerCounterUp}> + </button>
 
-        <Link to="/cart" >
+        
           <button className="contadorBtn comprarBtn" onClick={() => onAddToCart(counter)}> comprar </button>
-        </Link>
+
         
       </div>
       

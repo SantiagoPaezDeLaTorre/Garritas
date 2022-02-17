@@ -64,7 +64,9 @@ const NavBar = ({setCategoryId}) => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <CartWidget />
+      <Link to="/cart">
+        <CartWidget />
+      </Link>
     </div>
   );
 };

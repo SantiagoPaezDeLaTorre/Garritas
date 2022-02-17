@@ -6,7 +6,7 @@ import Contacto from "./views/Contacto/Contacto";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import CartContainer from "./containers/CartContainer/CartContainer";
+import Cart from "./components/Cart/Cart";
 import "./App.css";
 import { CartProvider } from "./components/CartContext";
 
@@ -24,7 +24,7 @@ const App = () => {
             <Route path="/categoria/:micategoria/:id" element={<ItemDetailContainer />} />
             <Route path="/servicios" element={<Servicios/>} />
             <Route path="/contacto" element={<Contacto/>} />
-            <Route path="/cart" element={<CartContainer/>} />
+            <Route path="/cart" element={<Cart/>} />
           </Routes>
         </div>
       </CartProvider>

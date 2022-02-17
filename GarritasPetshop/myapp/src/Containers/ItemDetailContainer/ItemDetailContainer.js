@@ -7,6 +7,7 @@ import { CartContext } from "../../components/CartContext";
 const ItemDetailContainer = () => {
   
   let {id} = useParams();
+  console.log("id");
   console.log(id);
 
   let itemClicked = {};
@@ -22,7 +23,7 @@ const ItemDetailContainer = () => {
         const results = await response.json();
         console.log("results");
         console.log(results);
-        itemClicked = results.find(item => item.id == id);
+        itemClicked = results.find(item => item.id.toString() === id);
         setItemDetails(itemClicked);
       }
       catch(e) {
@@ -38,15 +39,15 @@ const ItemDetailContainer = () => {
   }, []);
 
   const onAddToCart = (counter) => {
-    // if (counter === 1) {
-    //   //alert("Se agregó al carrito " + JSON.stringify(counter) + " producto.");
-    // } else {
-    //   // alert(
-    //   //   "Se agregaron al carrito " + JSON.stringify(counter) + " productos."
-    //   // );
-    //     }
+    if (counter === 1) {
+      //alert("Se agregó al carrito " + JSON.stringify(counter) + " producto.");
+    } else {
+      alert(
+        "Se agregaron al carrito " + JSON.stringify(counter) + " productos."
+      );
+    }
 
-    //setCart([(prevState)=>{return{...prevState, itemDetails}}]);
+    
     setCart((prevState) => {
       return [...prevState, itemDetails];
     });
