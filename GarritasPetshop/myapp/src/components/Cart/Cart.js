@@ -15,11 +15,11 @@ const CartContainer = () => {
         //esto va a ir en el context, y distinto
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    const removeItem = (id) => {
-        const arrayFiltrado = cart.filter((item) => item.id !== id);
-        console.log(arrayFiltrado);
-        setCart(arrayFiltrado);
-    }
+    // const removeItem = (id) => {
+    //     const arrayFiltrado = cart.filter((item) => item.id !== id);
+    //     console.log(arrayFiltrado);
+    //     setCart(arrayFiltrado);
+    // }
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
