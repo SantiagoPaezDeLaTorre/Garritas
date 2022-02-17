@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom';
 
-const ItemCounter = ({ stock, onAddToCart }) => {
-  
+const ItemCounter = ({itemDetails, stock, onAddToCart }) => {
   const [counter, setCounter] = useState(1);
-  
   const handlerCounterUp = () => {
     if (counter < stock) {
       setCounter(counter + 1);
@@ -13,13 +11,11 @@ const ItemCounter = ({ stock, onAddToCart }) => {
       alert("El stock es de " + (JSON.stringify(stock) + "."));
     }
   };
-
   const handlerCounterDown = () => {
     if (counter > 1) {
       setCounter(counter - 1);
     }
   };
-
   return (
     <div className="contador">
       <div className="contadorUp">
