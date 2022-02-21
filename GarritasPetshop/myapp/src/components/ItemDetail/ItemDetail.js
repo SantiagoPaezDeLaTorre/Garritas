@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 
 const ItemDetail = ({ itemDetails, onAddToCart, counterRender, setCounterRender  }) => {
 
-  console.log(counterRender);
   return (
     <div className="itemDetail">
       <div className="itemDetailLeft">

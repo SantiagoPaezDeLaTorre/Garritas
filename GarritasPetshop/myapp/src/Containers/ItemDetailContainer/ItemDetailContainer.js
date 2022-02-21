@@ -7,22 +7,18 @@ import { CartContext } from "../../components/CartContext";
 const ItemDetailContainer = () => {
   
   let {id} = useParams();
-  console.log("id");
-  console.log(id);
 
   let itemClicked = {};
   const [itemDetails, setItemDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [counterRender, setCounterRender] = useState(true);
-  const [cart, setCart] =  useContext(CartContext);
+  const {addItemsToCart, cart} =  useContext(CartContext);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch('/products.json');
         const results = await response.json();
-        console.log("results");
-        console.log(results);
         itemClicked = results.find(item => item.id.toString() === id);
         setItemDetails(itemClicked);
       }
@@ -46,20 +42,12 @@ const ItemDetailContainer = () => {
         "Se agregaron al carrito " + JSON.stringify(counter) + " productos."
       );
     }
-
-    
-    setCart((prevState) => {
-      return [...prevState, itemDetails];
-    });
-
-    console.log("cart");
-    console.log(cart);
-
+    addItemsToCart(itemDetails, counter)
     setCounterRender(false);
   };
 
-
-
+  console.log("cart", cart);
+  
   return (
     <div className="itemDetailContainer">
       {isLoading ? <img src={loader}></img> : <ItemDetail onAddToCart={onAddToCart} itemDetails={itemDetails}  counterRender={counterRender} setCounterRender={setCounterRender} />} 

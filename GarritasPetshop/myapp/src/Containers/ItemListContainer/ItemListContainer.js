@@ -4,10 +4,7 @@ import "./ItemListContainer.css";
 import {useParams} from 'react-router-dom';
 
 const ItemListContainer = () => {
-  
   const {micategoria} = useParams();
-  console.log(micategoria);
-
   const [items, setItems] = useState([]);
   let categoryClicked = [];
 
