@@ -1,15 +1,44 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../CartContext";
 import CartEmpty from "./CartEmpty";
 import "./Cart.css";
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../firebase/firebaseConfig';
+import MessageSuccess from '../../components/MessageSuccess/MessageSuccess';
+import TextField from '@mui/material/TextField';
+
+const initialState = {
+    name: '',
+    phone: '',
+    email: '',
+};
 
 const CartContainer = () => {
-    const { cart, setCart, removeItem, precioTotal, cantidadTotal} = useContext(CartContext);
+    const { cart, setCart, removeItem, precioTotal, cantidadTotal } = useContext(CartContext);
 
+    const [values, setValues] = useState(initialState);
+    const [purchaseID, setPurchaseID] = useState('');
+    const handleOnChange = (e) => {
+        const { value, name } = e.target;
+        setValues({ ...values, [name]: value });
+    };
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        console.log(values);
+        const docRef = await addDoc(collection(db, 'compras'), {
+            values,
+        });
+        console.log('Document written with ID: ', docRef.id);
+        setPurchaseID(docRef.id);
+        setValues(initialState);
+    };
+    let showForm = "noMostrarForm";
     //useEffect para ver mi cart cada vez que es modificado
     useEffect(
         () => {
-            console.log(cart);
+            console.log(...cart);
+            (cart.length !== 0 ? showForm = "mostrarForm" : showForm = "noMostrarForm");
+            console.log("form:", showForm);
         }
         , [cart])
 
@@ -40,12 +69,41 @@ const CartContainer = () => {
                         </div>)}
                 </div>
                 <div className="emptyCartBtn" >
-                    {(cantidadTotal!==0)? <button onClick={() => setCart([])}> Vaciar carrito</button> : <p></p>}
-                    
+                    {(cantidadTotal !== 0) ? <button> Finalizar compra </button> : <p></p>}
+                    {(cantidadTotal !== 0) ? <button onClick={() => setCart([])}> Vaciar carrito</button> : <p></p>}
+
                 </div>
-                <div className="precioTotal">{(cantidadTotal!==0)?<h3>PRECIO TOTAL: {precioTotal}</h3>: <p></p>}</div>
+                <div className="precioTotal">{(cantidadTotal !== 0) ? <h3>PRECIO TOTAL: {precioTotal}</h3> : <p></p>}</div>
             </div>
-            {cart.length == 0 ? <CartEmpty/> : <p></p>}
+            {cart.length === 0 ? <CartEmpty /> : <p></p>}
+            <div className="formContainer">
+                <form className={showForm} onSubmit={onSubmit}>
+                    <TextField
+                        placeholder='Nombre y apellido'
+                        style={{ margin: 10, width: 400 }}
+                        value={values.name}
+                        name='name'
+                        onChange={handleOnChange}
+                    />
+                    <TextField
+                        placeholder='Telefono'
+                        style={{ margin: 10, width: 400 }}
+                        value={values.phone}
+                        name='phone'
+                        onChange={handleOnChange}
+                    />
+                    <TextField
+                        placeholder='Email'
+                        style={{ margin: 10, width: 400 }}
+                        value={values.email}
+                        name='email'
+                        onChange={handleOnChange}
+                    />
+                    <button className='btnRealizarCompra'>Realizar compra</button>
+                </form>
+                {purchaseID && <MessageSuccess purchaseID={purchaseID} />}
+            </div>
+
         </div>
 
     );

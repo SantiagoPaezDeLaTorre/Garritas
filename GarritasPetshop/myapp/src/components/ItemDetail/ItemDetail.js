@@ -4,8 +4,10 @@ import "../ItemDetail/ItemDetail.css"
 import {Link} from 'react-router-dom';
 
 
-const ItemDetail = ({ itemDetails, onAddToCart, counterRender, setCounterRender  }) => {
-
+const ItemDetail = ({ item, onAddToCart, counterRender, setCounterRender  }) => {
+  let itemDetails = {};
+  itemDetails = item;
+  console.log("item", item);
   return (
     <div className="itemDetail">
       <div className="itemDetailLeft">
@@ -14,7 +16,7 @@ const ItemDetail = ({ itemDetails, onAddToCart, counterRender, setCounterRender 
       <div className="itemDetailRight">
         <h1>{itemDetails.nombre}</h1>
         <h2>$ {itemDetails.precio}</h2>
-        { counterRender ? <ItemCounter itemDetails={itemDetails} stock={itemDetails.stock} onAddToCart={onAddToCart} counterRender={counterRender} setCounterRender={setCounterRender} /> 
+        { counterRender ? <ItemCounter item={item} stock={item.stock} onAddToCart={onAddToCart} counterRender={counterRender} setCounterRender={setCounterRender} /> 
           : <Link to="/cart" ><button > Finalizar compra </button></Link>}
       </div>
     </div>

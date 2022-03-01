@@ -9,30 +9,31 @@ export const CartProvider = ({ children }) => {
     const [precioTotal, setPrecioTotal] = useState(0);
     let isEmpty = "carritoVacio";
 
-    const addItemsToCart = (itemDetails, cantidad) => {
+    const addItemsToCart = (item, cantidad) => {
+        let itemDetails = item;
+        console.log("itemDetails", itemDetails);
+        console.log("item", item);
         setCart((prevState) => {
             //Verifico que un item no esté antes de agregar el objeto entero
-            let alreadyOnCart = prevState.findIndex(item => item.id == itemDetails.id);
+            let alreadyOnCart = prevState.findIndex(obj => obj.id == itemDetails.id);
             if (alreadyOnCart == -1) {
-                prevState = [...prevState, { ...itemDetails, cantidad }]
+                prevState = [...prevState, { ...item, cantidad }]
             }
             else {
                 prevState[alreadyOnCart].cantidad += cantidad
             }
             return prevState;
         });
-
     }
 
     useEffect(() => {
-
         //Calculo la cantidad de items, este valor irá al cartWidget
         let totalItems = cart.reduce((a, b) => a + b.cantidad, 0);
-        console.table({ cantidadTotal, cart });
         setCantidadTotal(totalItems);
         //Calculo el importe total de compra
         let totalPrice = 0;
         for (let item of cart){
+            console.log("item", item);
             let precioT = item.precio*item.cantidad;
             totalPrice += precioT;
         }

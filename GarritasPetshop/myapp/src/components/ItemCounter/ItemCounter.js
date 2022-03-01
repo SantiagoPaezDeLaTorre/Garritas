@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-const ItemCounter = ({itemDetails, stock, onAddToCart }) => {
+const ItemCounter = ({item, stock, onAddToCart }) => {
   const [counter, setCounter] = useState(1);
   const handlerCounterUp = () => {
     if (counter < stock) {

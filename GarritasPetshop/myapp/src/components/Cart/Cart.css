@@ -67,7 +67,10 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-right: 65px;
+    padding-right: 4.5%;
+}
+.emptyCartBtn button{
+    margin-inline: 1%;
 }
 
 .precioTotal{
@@ -77,3 +80,47 @@
     padding-right: 65px;
     margin-top: 15px;
 }
+
+
+/* FORM  */
+
+/* .noMostrarForm{
+    display: none;
+} */
+.mostrarForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+}
+.formContainer{
+    text-align:center;
+	padding-top: 20;
+}
+.Textfield {
+	width: 400px;
+}
+.btnRealizarCompra{
+	background: #1E5594;
+	background: radial-gradient(
+		circle,
+		#1E5594 45%,
+		#2883C7 100%
+	);
+	color: white;
+	height: 54px;
+	width: 400px;
+	border-radius: 8px;
+	font-size: 18px;
+	transition: background, color 0.5s;
+	outline: #2883C7;
+	border: none;
+	margin: 10px;
+}
+.btnRealizarCompra:hover {
+	color: #c6e9fc;
+	background: #1E5594;
+	background: radial-gradient(circle, #2883C7 77%, #1E5594 100%);
+}
+
