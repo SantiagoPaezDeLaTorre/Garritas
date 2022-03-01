@@ -8,11 +8,9 @@ export const CartProvider = ({ children }) => {
     const [cantidadTotal, setCantidadTotal] = useState(0);
     const [precioTotal, setPrecioTotal] = useState(0);
     let isEmpty = "carritoVacio";
-
+    const [cartData, setCartData] = useState([]);
     const addItemsToCart = (item, cantidad) => {
         let itemDetails = item;
-        console.log("itemDetails", itemDetails);
-        console.log("item", item);
         setCart((prevState) => {
             //Verifico que un item no esté antes de agregar el objeto entero
             let alreadyOnCart = prevState.findIndex(obj => obj.id == itemDetails.id);
@@ -38,6 +36,18 @@ export const CartProvider = ({ children }) => {
             totalPrice += precioT;
         }
         setPrecioTotal(totalPrice);
+        setCartData((prevState)=>{
+            prevState=[];
+            for (let item of cart){
+                let id=item.id;
+                let title=item.nombre;
+                let price=item.precio;
+                let cant=item.cantidad;
+                let object={id, title, cant, price};
+                prevState = [...prevState, object];
+            }
+            return prevState;
+        })
     }, [cart])
 
     function removeItem(itemId) {
@@ -47,7 +57,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, setCart, addItemsToCart, removeItem, cantidadTotal, precioTotal}}>
+        <CartContext.Provider value={{ cart, setCart, addItemsToCart, removeItem, cantidadTotal, precioTotal, cartData}}>
             {children}
         </CartContext.Provider>
     )

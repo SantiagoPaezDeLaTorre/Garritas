@@ -7,6 +7,7 @@ import { db } from '../../firebase/firebaseConfig';
 import MessageSuccess from '../../components/MessageSuccess/MessageSuccess';
 import TextField from '@mui/material/TextField';
 
+
 const initialState = {
     name: '',
     phone: '',
@@ -14,7 +15,7 @@ const initialState = {
 };
 
 const CartContainer = () => {
-    const { cart, setCart, removeItem, precioTotal, cantidadTotal } = useContext(CartContext);
+    const { cart, setCart, removeItem, precioTotal, cantidadTotal, cartData } = useContext(CartContext);
 
     const [values, setValues] = useState(initialState);
     const [purchaseID, setPurchaseID] = useState('');
@@ -24,11 +25,10 @@ const CartContainer = () => {
     };
     const onSubmit = async (e) => {
         e.preventDefault();
-        console.log(values);
+        //const myDate = firebase.firestore.Timestamp.fromDate(new Date()).toDate();
         const docRef = await addDoc(collection(db, 'compras'), {
-            values,
+            "comprador":values,"items": cartData,"precio": precioTotal,"fecha": new Date()
         });
-        console.log('Document written with ID: ', docRef.id);
         setPurchaseID(docRef.id);
         setValues(initialState);
     };

@@ -15,11 +15,9 @@ const ItemListContainer = () => {
     const docs = [];
     const getItems = async () => {
       const q = query(collection(db,`${micategoria}`));
-      console.log("q", q);
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
       docs.push({ ...doc.data(), id: doc.id });
-      console.log("list", docs);
       });
       setItems(docs);
     }

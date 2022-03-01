@@ -49,8 +49,6 @@ const ItemDetailContainer = () => {
       console.log("list", docs);
       });
       setItem(...docs);
-      
-      console.log("itemDetails", item);
     }
     getItem();
     
