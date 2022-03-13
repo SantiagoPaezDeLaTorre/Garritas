@@ -1,0 +1,26 @@
+.carousel {
+    z-index: 1000;
+}
+
+.carousel .carousel-item img {
+    border-radius: 15px;
+}
+
+.carousel-indicators {
+    bottom: -42px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .carousel .carousel-item img {
+        border-radius: 0 0 15px 15px;
+    }
+}

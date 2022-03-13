@@ -1,6 +1,43 @@
+/*     PREFOOTER     */
+.preFooter {
+    animation: 0.5s ease-in opacityIn;
+    font-family: QsandSemiBold;
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    position: relative;
+    padding: 50px 0 10px 0;
+}
+
+.pcard {
+    display: flex;
+    flex-direction: row;
+    color: #515151;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    border: none;
+}
+
+.pcard img {
+    width: 100%;
+    max-width: 50px;
+}
+
+.pcard span {
+    display: block;
+    margin: 10px 20px;
+    margin-left: 8px;
+    color: #515151;
+}
+/*    / PREFOOTER     */
+
 .gradiente {
     background: linear-gradient(whitesmoke 0.5%, #9DC9E0);
 }
+
 /*      FOOTER        */
 footer {
     width: 100%;
@@ -112,6 +149,7 @@ h3:hover {
 .line h3:hover {
     color: #2883C7;
 }
+
 /*      /FOOTER        */
 
 
