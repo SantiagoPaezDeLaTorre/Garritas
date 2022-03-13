@@ -20,7 +20,7 @@ const App = () => {
     <Router>
       <CartProvider>
         <div className="contenedor"> 
-          {/* <Header/> */}
+          <Header/>
           <NavBar/>
           <Routes>
             <Route path="/" element={<Home/>} />

@@ -5,8 +5,10 @@
 } */
 .cartIcon{
     /* max-width: 300px; */
-    width: 80px;
-    height: 40px;
+    width: 120px;
+    height: 60px;
+    position: relative;
+    top: 20px;
 }
 .catCart{
     position: relative;
@@ -19,14 +21,14 @@
 }
 .openbtn {
     position: relative;
-    left: 10px;
+    left: 20px;
     cursor: pointer;
     background-color: transparent;
     border: none;
 }
 .badge {
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     padding-left: 9px;
     padding-right: 9px;
     -webkit-border-radius: 9px;
@@ -39,7 +41,7 @@
     color: #c6e9fc;
     padding: 1px 5px;
 }
-.logIn{
+/* .logIn{
     display: inherit;
     flex-direction: column;
     justify-content: flex-end;
@@ -51,7 +53,7 @@
     top: 3%;
     color: rgb(112, 112, 112);
     text-decoration: none;
-}
+} */
 
 @media screen and (max-width: 768px){
 
@@ -67,14 +69,5 @@
     #lblCartCounter{
         left: 5px;
         font-size: 1rem;
-    }
-
-    .logIn {
-        flex-direction: row;
-        justify-content: right;
-    }
-    .logIn a{
-        text-justify: right;
-        font-size: 1.6rem;
     }
 }
