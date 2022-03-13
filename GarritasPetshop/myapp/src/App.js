@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "../src/views/Home/Home";
 import Servicios from "./views/Servicios/Servicios";
@@ -17,6 +19,7 @@ const App = () => {
     <Router>
       <CartProvider>
         <div className="contenedor"> 
+          {/* <Header/> */}
           <NavBar/>
           <Routes>
             <Route path="/" element={<Home/>} />
@@ -26,8 +29,10 @@ const App = () => {
             <Route path="/contacto" element={<Contacto/>} />
             <Route path="/cart" element={<Cart/>} />
           </Routes>
+          
         </div>
       </CartProvider>
+        <Footer/>
     </Router>
   );
 };

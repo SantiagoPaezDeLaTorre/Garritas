@@ -7,25 +7,25 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
 import CartWidget from "../CartWidget/CartWidget";
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const NavBar = ({setCategoryId}) => {
+const NavBar = ({ setCategoryId }) => {
 
-  const {cantidadTotal} = useContext(CartContext);
+  const { cantidadTotal } = useContext(CartContext);
   const navigate = useNavigate();
-  function handlerCategory(category) {
-    if (category === "perros"){
-      setCategoryId(1)
-    }
-    else if (category === "gatos") {
-      setCategoryId(2)
-    }
-    navigate.push(`/${category}`); 
-  }
-  
+  // function handlerCategory(category) {
+  //   if (category === "perros"){
+  //     setCategoryId(1)
+  //   }
+  //   else if (category === "gatos") {
+  //     setCategoryId(2)
+  //   }
+  //   navigate.push(`/${category}`); 
+  // }
+
   return (
     <div className="navbarContainer">
       <Navbar bg="light" expand="lg" className="navegacion">
@@ -68,7 +68,7 @@ const NavBar = ({setCategoryId}) => {
         </Container>
       </Navbar>
       <Link to="/cart">
-        { (cantidadTotal !== 0) ? <CartWidget /> : <p></p>}
+        {(cantidadTotal !== 0) ? <CartWidget /> : <p></p>}
       </Link>
     </div>
   );

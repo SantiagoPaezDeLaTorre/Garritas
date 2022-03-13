@@ -1,0 +1,223 @@
+.gradiente {
+    background: linear-gradient(whitesmoke 0.5%, #9DC9E0);
+}
+/*      FOOTER        */
+footer {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "futer1""futer2""futer3";
+    grid-template-rows: 1fr;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 2.5rem;
+    color: rgb(201, 34, 34);
+}
+
+.foot {
+    margin: 15px 0 15px 0;
+}
+
+.contenidoF {
+    position: relative;
+    line-height: 2rem;
+}
+
+.medios {
+    margin-top: 2%;
+}
+
+.btnFuter1 {
+    font-size: 1.5rem;
+    padding: 0;
+    color: #1E5594;
+}
+
+.btnFuter1:hover {
+    color: #2883C7;
+    transition-duration: 0.3s;
+}
+
+h3 {
+    color: #1E5594;
+}
+
+.futer1 {
+    grid-area: futer1;
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    margin: auto;
+}
+
+.contenidoF1 {
+    display: flex;
+    flex-direction: column;
+}
+
+h3:hover {
+    color: #2883C7;
+    transition-duration: 0.3s;
+}
+
+.futer2 {
+    grid-area: futer2;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.mediosPago {
+    width: 90%;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+}
+
+.mediosPago li {
+    width: 6%;
+    margin: 1%;
+}
+
+.mediosPago li img {
+    margin: 0;
+    width: 100%;
+}
+
+.futer3 {
+    grid-area: futer3;
+    justify-self: center;
+}
+
+.contenidoF3 {
+    margin-left: 6%;
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+}
+
+.line h3 {
+    font-size: 1.5rem;
+    padding: 4px 0px 4px 15px;
+    margin-bottom: 0;
+}
+
+.line h3:hover {
+    color: #2883C7;
+}
+/*      /FOOTER        */
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+    .gradiente {
+        background: linear-gradient(whitesmoke 30%, #9DC9E0);
+    }
+
+    /*     PREFOOTER      */
+    .preFooter {
+        font-family: QsandSemiBold;
+        font-size: 1.5rem;
+        text-align: center;
+        display: flex;
+        max-width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+        padding-top: 70px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .preFooter span {
+        display: block;
+        margin: 0 10px 20px 20px;
+        color: #515151;
+    }
+
+    .pcard {
+        max-width: 33%;
+        color: #515151;
+    }
+
+    .pcard img {
+        width: 100%;
+        max-width: 60px;
+    }
+
+    /*    /PREFOOTER      */
+
+    /*      FOOTER        */
+    footer {
+        width: 100%;
+        grid-template-areas: "futer1 futer2 futer3";
+        grid-template-columns: 1fr 1fr 1fr;
+        position: relative;
+        padding-top: 20px;
+    }
+
+    footer h2 {
+        font-size: 2rem;
+    }
+
+    .futer1 {
+        grid-area: futer1;
+        max-width: 100%;
+    }
+
+    .futer1 .contenidoF1 .btnFuter1 {
+        font-size: calc(1rem + .6vw);
+    }
+
+    .futer2 {
+        grid-area: futer2;
+    }
+
+    .futer2 .mediosDePago {
+        margin-right: 5%;
+    }
+
+    .futer2 .medios {
+        margin-right: 5%;
+    }
+
+    .futer2 .mediosPago {
+        width: 80%;
+        padding: 0;
+    }
+
+    .mediosPago li {
+        width: 12.2%;
+        margin: 1%;
+    }
+
+    .mediosPago li img {
+        margin: 0;
+        width: 100%;
+    }
+
+    .futer3 {
+        grid-area: futer3;
+    }
+
+    .futer3 .contenidoF3 .line h3 {
+        font-size: calc(1rem + .6vw);
+    }
+
+    .foot {
+        padding: 10px 0 10px 0;
+        margin-top: 15px;
+    }
+}
+
+/*      /FOOTER        */

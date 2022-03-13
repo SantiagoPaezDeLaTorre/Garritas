@@ -19,26 +19,6 @@ const ItemDetailContainer = () => {
   const [counterRender, setCounterRender] = useState(true);
   const {addItemsToCart, cart} =  useContext(CartContext);
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await fetch('/products.json');
-  //       const results = await response.json();
-  //       itemClicked = results.find(item => item.id.toString() === id);
-  //       setItemDetails(itemClicked);
-  //     }
-  //     catch(e) {
-  //       console.error(e);
-  //     }
-  //   }
-  //   fetchData();
-        
-  //   setTimeout(()=>{
-  //     setIsLoading(false);
-  //   }, 2000);
-
-  // }, []);
-
   useEffect(() => {
     const docs = [];
     const getItem = async () => {
@@ -55,7 +35,7 @@ const ItemDetailContainer = () => {
 
     setTimeout(()=>{
       setIsLoading(false);
-    }, 2000);
+    }, 1250);
 
   }, [id]);
 

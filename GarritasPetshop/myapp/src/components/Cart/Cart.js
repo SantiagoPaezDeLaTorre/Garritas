@@ -27,10 +27,11 @@ const CartContainer = () => {
         e.preventDefault();
         //const myDate = firebase.firestore.Timestamp.fromDate(new Date()).toDate();
         const docRef = await addDoc(collection(db, 'compras'), {
-            "comprador":values,"items": cartData,"precio": precioTotal,"fecha": new Date()
+            "comprador": values, "items": cartData, "precio": precioTotal, "fecha": new Date()
         });
         setPurchaseID(docRef.id);
         setValues(initialState);
+        setCart([]);
     };
     let showForm = "noMostrarForm";
     //useEffect para ver mi cart cada vez que es modificado
@@ -44,7 +45,7 @@ const CartContainer = () => {
 
     return (
         <div>
-            <div className="cartContainer-items" className={cantidadTotal}>
+            <div className="cartContainer-items">
                 <h1>CART</h1>
                 <div className="cartContainer">
                     {cart.map((item) =>
