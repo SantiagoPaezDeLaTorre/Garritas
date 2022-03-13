@@ -123,4 +123,24 @@
 	background: #1E5594;
 	background: radial-gradient(circle, #2883C7 77%, #1E5594 100%);
 }
-
+form button:disabled,
+button[disabled]{
+    background: #1e55945e;
+    background: radial-gradient(
+		circle,
+		#1e559463 45%,
+		#2882c77a 100%
+	);
+	color: rgba(255, 255, 255, 0.575);
+    cursor: default;
+}
+form button:disabled:hover,
+button[disabled]:hover{
+    background: #1e55945e;
+    background: radial-gradient(
+		circle,
+		#1e559463 45%,
+		#2882c77a 100%
+	);
+	color: rgba(255, 255, 255, 0.575);
+}

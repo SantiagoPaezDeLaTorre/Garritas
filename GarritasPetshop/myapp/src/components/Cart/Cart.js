@@ -42,7 +42,7 @@ const CartContainer = () => {
             console.log("form:", showForm);
         }
         , [cart])
-
+    const buyEnabled = cart.length > 0 && values.name.length > 0 && values.phone.length > 0 && values.email.length > 0;
     return (
         <div>
             <div className="cartContainer-items">
@@ -100,7 +100,7 @@ const CartContainer = () => {
                         name='email'
                         onChange={handleOnChange}
                     />
-                    <button className='btnRealizarCompra'>Realizar compra</button>
+                    <button disabled={!buyEnabled} className='btnRealizarCompra'>Realizar compra</button>
                 </form>
                 {purchaseID && <MessageSuccess purchaseID={purchaseID} />}
             </div>

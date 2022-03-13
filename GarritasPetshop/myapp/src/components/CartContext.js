@@ -9,6 +9,7 @@ export const CartProvider = ({ children }) => {
     const [precioTotal, setPrecioTotal] = useState(0);
     let isEmpty = "carritoVacio";
     const [cartData, setCartData] = useState([]);
+    
     const addItemsToCart = (item, cantidad) => {
         let itemDetails = item;
         setCart((prevState) => {
