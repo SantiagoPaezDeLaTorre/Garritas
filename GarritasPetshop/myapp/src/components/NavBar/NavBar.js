@@ -9,7 +9,6 @@ import {
 } from "react-bootstrap";
 import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
-import CartWidget from "../CartWidget/CartWidget";
 import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = ({ setCategoryId }) => {
@@ -67,9 +66,6 @@ const NavBar = ({ setCategoryId }) => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Link to="/cart">
-        {(cantidadTotal !== 0) ? <CartWidget /> : <p></p>}
-      </Link>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const Header = () => {
                 </Link>
             </div>
             <div className="headerDerecha">
-                <CartWidget/>
+                {(cantidadTotal !== 0) ? <CartWidget /> : <p></p>}
             </div>
         </header>
     )

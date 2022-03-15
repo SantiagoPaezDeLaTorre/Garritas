@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import Prefooter from "./components/Prefooter/Prefooter";
 import Footer from "./components/Footer/Footer";
 import NavBar from "./components/NavBar/NavBar";
-import Home from "../src/views/Home/Home";
+import Home from "./components/Home/Home";
 import Servicios from "./views/Servicios/Servicios";
 import Contacto from "./views/Contacto/Contacto";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
