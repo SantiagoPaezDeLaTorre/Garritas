@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
-import { CartContext } from "../CartContext";
-import { Link, useNavigate } from 'react-router-dom';
-import './NavBarOG.css';
+import React from "react";
+import { Link} from 'react-router-dom';
+import './NavBar.css';
 
 const Navegador = () => {
 

@@ -10,7 +10,7 @@ import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailCont
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import "./App.css";
-import NavBarOG from "./components/NavBar/NavBarOG";
+import NavBarOG from "./components/NavBar/NavBar";
 import { CartProvider } from "./components/CartContext";
 
 const App = () => {

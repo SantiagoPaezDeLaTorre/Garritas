@@ -20,3 +20,8 @@
   padding-top: 2%;
   color: #2883c7;
 }
+.listLoader{
+  display: block;
+  margin: 0 0 auto auto;
+  width: 90%;
+}

@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom';
 import { CartContext } from "../../components/CartContext";
 import {db} from "../../firebase/firebaseConfig";
 import { collection, query, getDocs, where, documentId } from 'firebase/firestore';
-
+import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
   
@@ -33,7 +33,7 @@ const ItemDetailContainer = () => {
 
     setTimeout(()=>{
       setIsLoading(false);
-    }, 1250);
+    }, 750);
 
   }, [id]);
 
@@ -46,7 +46,7 @@ const ItemDetailContainer = () => {
   
   return (
     <div className="itemDetailContainer">
-      {isLoading ? <img src={loader}></img> : <ItemDetail onAddToCart={onAddToCart} item={item}  counterRender={counterRender} setCounterRender={setCounterRender} />} 
+      {isLoading ? <img className="loader" src={loader}></img> : <ItemDetail onAddToCart={onAddToCart} item={item}  counterRender={counterRender} setCounterRender={setCounterRender} />} 
     </div>
   );
 };
