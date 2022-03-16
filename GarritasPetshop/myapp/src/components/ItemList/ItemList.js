@@ -2,6 +2,7 @@ import React from "react";
 import "./ItemList.css";
 import Item from "../Item/Item";
 import { Link } from 'react-router-dom';
+import "./ItemListContainer.css";
 
 const ItemList = ({ items, micategoria}) => {
   return (

@@ -5,32 +5,76 @@
 }
 .itemDetailLeft{
     display: inherit;
+    width: 50%;
     
 }
 .itemDetailLeft img{
-    max-width: 60%;
+    width: 100%;
+    max-width: 400px;
     margin: 0 auto;
 }
 .itemDetailRight{
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: baseline;
 
 }
-
 .contador {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     max-width: 100%;
     font-size: 2rem;
 }
+/*
 .contadorUp {
     display: inherit;
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 3%;
-}
-.contadorBtn{
+} */
+/* .contadorBtn{
     margin: 5%;
     
+} */
+.row{
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: baseline;
+}
+.row h2{
+    display: block;
+    padding: 5% 3% 3% 1%;
+    margin-right: 2%;
+    max-width: 192px;
+}
+.contadorBtn{
+    background-color: whitesmoke;
+    color: #1E5594;
+    border-radius: 15px;
+    border: 1px solid rgb(68, 67, 67);
+}
+.botones{
+    color: #1E5594;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;    
+}
+.btnR{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-left: 1vw;
+}
+.comprarBtn{
+    justify-content: left;
+    width: 120px;
+    margin-left: 1%;
+    font-size: 2rem;
+}
+.finalizarC{
+    width: fit-content;
+    margin: 5% 0 0 0;
 }

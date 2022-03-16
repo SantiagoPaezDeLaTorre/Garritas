@@ -17,7 +17,7 @@ const ItemDetail = ({ item, onAddToCart, counterRender, setCounterRender  }) => 
         <h1>{itemDetails.nombre}</h1>
         <h2>$ {itemDetails.precio}</h2>
         { counterRender ? <ItemCounter item={item} stock={item.stock} onAddToCart={onAddToCart} counterRender={counterRender} setCounterRender={setCounterRender} /> 
-          : <Link to="/cart" ><button > Finalizar compra </button></Link>}
+          : <Link to="/cart" ><button className="contadorBtn comprarBtn finalizarC"> Finalizar compra </button></Link>}
       </div>
     </div>
   );

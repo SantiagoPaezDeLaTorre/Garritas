@@ -40,13 +40,6 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const onAddToCart = (counter) => {
-    if (counter === 1) {
-      //alert("Se agregó al carrito " + JSON.stringify(counter) + " producto.");
-    } else {
-      alert(
-        "Se agregaron al carrito " + JSON.stringify(counter) + " productos."
-      );
-    }
     addItemsToCart(item, counter)
     setCounterRender(false);
   };

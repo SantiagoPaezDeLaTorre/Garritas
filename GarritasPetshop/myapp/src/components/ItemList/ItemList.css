@@ -14,5 +14,12 @@
   text-align: center;
 }
 .card{
-  width: 100%;
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
+.card:hover{
+  -webkit-box-shadow: 5px 5px 18px 1px rgba(48,48,48,0.4); 
+  box-shadow: 5px 5px 18px 1px rgba(48,48,48,0.4);
 }

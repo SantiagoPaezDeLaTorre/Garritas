@@ -7,7 +7,6 @@ import { db } from '../../firebase/firebaseConfig';
 import MessageSuccess from '../../components/MessageSuccess/MessageSuccess';
 import TextField from '@mui/material/TextField';
 
-
 const initialState = {
     name: '',
     phone: '',
@@ -70,7 +69,6 @@ const CartContainer = () => {
                         </div>)}
                 </div>
                 <div className="emptyCartBtn" >
-                    {(cantidadTotal !== 0) ? <button> Finalizar compra </button> : <p></p>}
                     {(cantidadTotal !== 0) ? <button onClick={() => setCart([])}> Vaciar carrito</button> : <p></p>}
 
                 </div>

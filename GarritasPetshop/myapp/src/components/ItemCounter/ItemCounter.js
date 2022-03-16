@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-const ItemCounter = ({item, stock, onAddToCart }) => {
+const ItemCounter = ({ item, stock, onAddToCart }) => {
   const [counter, setCounter] = useState(1);
   const handlerCounterUp = () => {
     if (counter < stock) {
@@ -18,19 +18,19 @@ const ItemCounter = ({item, stock, onAddToCart }) => {
   };
   return (
     <div className="contador">
-      <div className="contadorUp">
 
-        <h4>Cantidad: {counter}</h4>
-        <button className="contadorBtn" onClick={handlerCounterDown}> - </button>
-        
-        <button className="contadorBtn" onClick={handlerCounterUp}> + </button>
+      <div className="row">
 
-        
-          <button className="contadorBtn comprarBtn" onClick={() => onAddToCart(counter)}> comprar </button>
+        <h2>Cantidad: {counter}</h2>
 
-        
+        <button className="contadorBtn btnR" onClick={handlerCounterDown}> - </button>
+
+        <button className="contadorBtn btnR" onClick={handlerCounterUp}> + </button>
+
+        <button className="contadorBtn comprarBtn" onClick={() => onAddToCart(counter)}> comprar </button>
+
       </div>
-      
+
     </div>
   );
 };

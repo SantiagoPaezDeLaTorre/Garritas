@@ -10,64 +10,68 @@ import {
 import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
 import { Link, useNavigate } from 'react-router-dom';
+import './NavBar.css';
 
-const NavBar = ({ setCategoryId }) => {
+const Navegador = ({ setCategoryId }) => {
 
   const { cantidadTotal } = useContext(CartContext);
   const navigate = useNavigate();
-  // function handlerCategory(category) {
-  //   if (category === "perros"){
-  //     setCategoryId(1)
-  //   }
-  //   else if (category === "gatos") {
-  //     setCategoryId(2)
-  //   }
-  //   navigate.push(`/${category}`); 
-  // }
 
   return (
-    <div className="navbarContainer">
-      <Navbar bg="light" expand="lg" className="navegacion">
-        <Container>
-          <Navbar.Brand as={Link} to="/" href="#home" className="nav-link">
-            GARRITAS PETSHOP
-          </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="basic-navbar-nav"
-            className="navbar-toggler"
-          />
-          <Navbar.Collapse id="basic-navbar-nav" className="navbar-collapse">
-            <Nav className="me-auto">
-              <Nav.Link as={Link} to="/" className="nav-link" >
-                INICIO
-              </Nav.Link>
-              <Nav.Link as={Link} to="/categoria/perros" className="nav-link" >
-                PERROS
-              </Nav.Link>
-              <Nav.Link as={Link} to="/categoria/gatos" className="nav-link" >
-                GATOS
-              </Nav.Link>
-              <Nav.Link as={Link} to="/servicios" href="#servicios" className="nav-link">
-                SERVICIOS
-              </Nav.Link>
-              <Nav.Link as={Link} to="/contacto" href="#link" className="nav-link">
-                CONTACTO
-              </Nav.Link>
-            </Nav>
-            <Form className="d-flex">
-              <FormControl
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+    <nav
+      className="navbar navbar-expand-md navbar-light"
+      id="navegacion"
+    >
+      <div className="container-fluid">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            className="navbar-nav me-0 mb-2 mb-lg-0 justify-content-evenly"
+          >
+            <li className="nav-item">
+              <Link to="/">
+                <a className="nav-link active inicioDelay" aria-current="page" href="./index.html" >INICIO</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/categoria/perros">
+                <a className="nav-link perrosDelay" href="#" role="button" aria-expanded="false">PERROS</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/categoria/gatos">
+                <a className="nav-link gatosDelay" href="#" role="button" aria-expanded="false">GATOS</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/servicios">
+                <a className="nav-link serviciosDelay" href="#" role="button" aria-expanded="false">SERVICIOS</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/contacto">
+                <a className="nav-link contactoDelay" href="./pages/contacto.html">CONTACTO</a>
+              </Link>
+            </li>
+          </ul>
+          {/* <form className="d-flex">
+            <input className="form-control me-2 mb-2 buscador" type="search" placeholder="Buscador" aria-label="Search" />
+            <button className="btn btnBuscar btn-outline-success me-1 mb-2" type="submit">Buscar</button>
+          </form> */}
+        </div>
+      </div>
+    </nav>
   );
 };
 
-export default NavBar;
+export default Navegador;

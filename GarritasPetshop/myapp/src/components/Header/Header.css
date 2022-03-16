@@ -4,18 +4,16 @@ header{
     justify-content: space-between;
     align-items: flex-end; 
     height: 80px;
-    max-width: 100%;
+    width: 90%;
     background-color: whitesmoke;
     font-size: 2rem;
-    margin-top: 1%;
     margin-bottom: 1%;
+    margin: 0 auto;
 }
 .headerIzquierda{
     max-width: 380px;
 }
 #logo{
-    position: relative;
-    top: 20px;
-    max-width: 380px;
+    max-width: 300px;
     animation: 0.6s ease-out slideInFromUp;
 }

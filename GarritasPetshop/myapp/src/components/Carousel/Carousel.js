@@ -8,43 +8,45 @@ import "./Carousel.css";
 
 const Slider = () => {
     return (
-        <Carousel variant='dark'>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={slide1}
-                    alt="First slide"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={slide2}
-                    alt="Second slide"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={slide3}
-                    alt="Third slide"
-                />
-            </Carousel.Item>
-            <Carousel.Item> 
-                <img
-                    className="d-block w-100"
-                    src={slide4}
-                    alt="Fourth slide"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={slide5}
-                    alt="Fifth slide"
-                />
-            </Carousel.Item>
-        </Carousel>
+        <div className='slider'>
+            <Carousel variant='dark'>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={slide1}
+                        alt="First slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={slide2}
+                        alt="Second slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={slide3}
+                        alt="Third slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={slide4}
+                        alt="Fourth slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={slide5}
+                        alt="Fifth slide"
+                    />
+                </Carousel.Item>
+            </Carousel>
+        </div>
     )
 }
 

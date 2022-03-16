@@ -11,6 +11,7 @@ import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailCont
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import "./App.css";
+import NavBarOG from "./components/NavBar/NavBarOG";
 import { CartProvider } from "./components/CartContext";
 
 const App = () => {
@@ -21,7 +22,7 @@ const App = () => {
       <CartProvider>
         <div className="contenedor"> 
           <Header/>
-          <NavBar/>
+          <NavBarOG/>
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/categoria/:micategoria" element={<ItemListContainer />} />

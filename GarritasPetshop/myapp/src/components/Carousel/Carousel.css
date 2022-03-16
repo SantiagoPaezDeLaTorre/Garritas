@@ -1,9 +1,16 @@
+.slider{
+    justify-items: center;
+
+}
 .carousel {
     z-index: 1000;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .carousel .carousel-item img {
     border-radius: 15px;
+    margin: auto;
 }
 
 .carousel-indicators {
@@ -18,9 +25,10 @@
 .carousel-control-prev-icon, .carousel-control-next-icon{
     display: none;
 }
-
+/* 
 @media screen and (min-width: 768px) {
     .carousel .carousel-item img {
-        border-radius: 0 0 15px 15px;
+        border-radius: 15px;
+        margin: 0 auto;
     }
-}
+} */
