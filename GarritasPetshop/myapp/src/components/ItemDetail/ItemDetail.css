@@ -26,17 +26,6 @@
     max-width: 100%;
     font-size: 2rem;
 }
-/*
-.contadorUp {
-    display: inherit;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 3%;
-} */
-/* .contadorBtn{
-    margin: 5%;
-    
-} */
 .row{
     align-items: center;
     width: 80%;

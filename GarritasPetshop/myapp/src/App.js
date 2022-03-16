@@ -1,11 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import Header from "./components/Header/Header";
 import Prefooter from "./components/Prefooter/Prefooter";
 import Footer from "./components/Footer/Footer";
-import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
-import Servicios from "./views/Servicios/Servicios";
-import Contacto from "./views/Contacto/Contacto";
+import Servicios from "./components/Servicios/Servicios";
+import Contacto from "./components/Contacto/Contacto";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";

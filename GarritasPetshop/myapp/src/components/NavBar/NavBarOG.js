@@ -1,21 +1,9 @@
-import {
-  Navbar,
-  Nav,
-  Container,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
 import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
 import { Link, useNavigate } from 'react-router-dom';
 import './NavBarOG.css';
 
-const Navegador = ({ setCategoryId }) => {
-
-  const { cantidadTotal } = useContext(CartContext);
-  const navigate = useNavigate();
+const Navegador = () => {
 
   return (
     <div className="navContainer">

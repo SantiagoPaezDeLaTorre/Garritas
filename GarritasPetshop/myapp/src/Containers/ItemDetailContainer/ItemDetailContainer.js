@@ -12,8 +12,6 @@ const ItemDetailContainer = () => {
   let {id} = useParams();
   let {micategoria} = useParams();
   console.log("id",id,"...micategoria",micategoria);
-
-  let itemClicked = {};
   const [item, setItem] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [counterRender, setCounterRender] = useState(true);

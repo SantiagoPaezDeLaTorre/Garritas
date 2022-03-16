@@ -104,9 +104,6 @@
 
 /* FORM  */
 
-/* .noMostrarForm{
-    display: none;
-} */
 .mostrarForm {
 	display: flex;
 	flex-direction: column;
